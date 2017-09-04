@@ -68,9 +68,10 @@ public class MessagingPanel extends JPanel {
 		online.removeElement(uname);
 	}
 	
-	public void showMessage(String from, String msg) {
+	public void showMessage(String from, String msgString) {
 		openMessagingTab(from);
 		MessagePanel panel = (MessagePanel)messagingTabbedPane.getComponentAt(messagingTabbedPane.indexOfTab(from));
+		Message msg = new Message(from, msgString);
 		panel.messages.addElement(msg);
 	}
 	
